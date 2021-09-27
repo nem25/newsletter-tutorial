@@ -82,8 +82,6 @@ class _SignUpFormState extends State<SignUpForm> {
       try {
         //Send request
         //Call firebase function
-        FirebaseFunctions functions = FirebaseFunctions.instance;
-        functions.useFunctionsEmulator("127.0.0.1", 5002);
         HttpsCallable callable =
             FirebaseFunctions.instance.httpsCallable('signUp');
         final results = await callable();
